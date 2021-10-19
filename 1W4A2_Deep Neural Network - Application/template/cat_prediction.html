@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <center>
+        <a href="{{ url_for('index') }}">Go back</a>
+        <h1>Welcome to Deep Neural Network Prediction</h1>
+        <p>The Neural Network Predicts: </p>
+        <h2> {{data}} </h2>
+        <img src="../static/img.jpg" alt="cat_or_not">
+        <h2>Behind the scene of the prediction:</h2>
+        <p>Number of training examples: 209</p>
+        <p>Number of testing examples: 50</p>
+        <p>Accuracy of traing and testing examples are: 0.98 and 0.8 respectively</p>
+        <p>**A few types of images the model tends to do poorly on include:** 
+            - Cat body in an unusual position
+            - Cat appears against a background of a similar color
+            - Unusual cat color and species
+            - Camera Angle
+            - Brightness of the picture
+            - Scale variation (cat is very large or small in image) </p>
+    </center>
+
+</body>
+
+</html>

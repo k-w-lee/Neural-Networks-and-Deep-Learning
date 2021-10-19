@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.scss">
+    <style>
+        img {
+            width: 400px;
+            float:initial;
+            margin-right: 10px;
+        }
+        body {
+            margin: 10;
+            background: #F2F2F2
+        }
+    </style>
+</head>
+
+<body>
+    <center><h1>Welcome to Morris Lee A.I.</h1>
+    
+    <p> I'm Morris Lee. I work in a number of Artificial Intelligence areas, but primarily in 
+        machine learning and deep learning areas. I am part of the MSc Data Science program at USM. Here are my portfolios that I have deployed using flask and HTML. </p>
+    </center>
+    <h2>(1) Cat identifier using Deep Learning</h2>
+    <img src="../static/catindex.jpg" alt="cute_cat">
+    <br />
+    <p> Test with your own image to know whether the image is a Cat or not</p>
+    <form action="{{ url_for('cat_prediction') }}" , method="POST" , enctype="multipart/form-data">
+        <input type="file" , name="img">
+        <input type="submit" name="btn" value="Predict Cat" id="">
+    </form>
+
+    <h2>(2) Titanic Survival Prediction</h2>
+    <img src="../static/titanic.jpg" alt="titanic">
+    <form action="{{ url_for('titanic_prediction') }}", method="POST">
+        <table>
+            <tr>
+                <td>
+                    Ticket Class :
+                </td>
+                <td>
+                    <input type="radio" name="Ticket Class"value="1">First Class
+                    <input type="radio" name="Ticket Class"value="2">Second Class
+                    <input type="radio" name="Ticket Class"value="3">Third Class
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gender :
+                </td>
+                <td>
+                    <input type="radio" name="Gender" value="1">Male </input>
+                    <input type="radio" name="Gender" value="0">Female </input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Age:
+                </td>
+                <td>
+                    <input type="number" name="Age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    # of siblings / spouses on the Titanic:
+                </td>
+                <td>
+                    <input type="radio" name="sibsp" value="0">0</input>
+                    <input type="radio" name="sibsp" value="1">1</input>
+                    <input type="radio" name="sibsp" value="2">2</input>
+                    <input type="radio" name="sibsp" value="3">3</input>
+                    <input type="radio" name="sibsp" value="4">4</input>
+                    <input type="radio" name="sibsp" value="5">5</input>
+                    <input type="radio" name="sibsp" value="6">>=6</input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    # of parents / children on the Titanic
+                </td>
+                <td>
+                    <input type="radio" name="parch" value="0">0</input>
+                    <input type="radio" name="parch" value="1">1</input>
+                    <input type="radio" name="parch" value="2">2</input>
+                    <input type="radio" name="parch" value="3">3</input>
+                    <input type="radio" name="parch" value="4">4</input>
+                    <input type="radio" name="parch" value="5">5</input>
+                    <input type="radio" name="parch" value="6">>=6</input>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Passenger fare $(0~500):
+                </td>
+                <td>
+                    <input type="number" name="Passenger fare">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Port of Embarkation:
+                </td>
+                <td>
+                    <input type="radio" name="Port of Embarkation" value="0">Cherbourg
+                    <input type="radio" name="Port of Embarkation" value="1">Queenstown
+                    <input type="radio" name="Port of Embarkation" value="2">Southampton
+                </td>               
+            </tr>
+                <td>
+                    <input type="submit" value="Predict Now" name="titanic_button">
+                </td>
+        </table>
+    </form>
+    <h2>(3) Parkinson's Disease Prediction</h2>
+    <img src="../static/park.jpg" alt="parkinson">
+    <form action="{{ url_for('parkinson_prediction') }}", method="POST">
+        <table>
+            <tr>
+                <td>
+                    Age:
+                </td>
+                <td>
+                    <input type="number" name = "park_age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Sex:
+                </td>
+                <td>
+                    <input type="radio" name = "park_sex" value="0">Male
+                    <input type="radio" name = "park_sex" value="1">Female
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Voice Measure - Jitter(%)
+                </td>
+                <td>
+                    <input type="number" name = "jitter" step="0.0001"> (lower & upper boundary: -0.0012, 0.0116)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Voice Measure - Shimmer.APQ11
+                </td>
+                <td>
+                    <input type="number" name = "shimmer"  step="0.0001"> (lower & upper boundary: -0.0099, 0.0583)
+                </td>                
+            </tr>
+            <tr>
+                <td>
+                    Voice Measure - NHR
+                </td>
+                <td>
+                    <input type="number" name = "NHR"  step="0.0001"> (lower & upper boundary: -0.0200, 0.0625)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Voice Measure - HNR
+                </td>
+                <td>
+                    <input type="number" name = "HNR"  step="0.0001"> (lower & upper boundary: 11.8490, 32.0010)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Voice Measure - RPDE
+                </td>
+                <td>
+                    <input type="number" name = "RPDE"  step="0.0001"> (lower & upper boundary: 0.2534, 0.8304)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Voice Measure - DFA
+                </td>
+                <td>
+                    <input type="number" name = "DFA" step="0.0001"> (lower & upper boundary: 0.4234, 0.8841)
+                </td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Voice Measure - PPE
+                </td>
+                <td>
+                    <input type="number" name = "PPE"  step="0.0001"> (lower & upper boundary: -0.0059, 0.4267)
+                </td>
+            </tr>
+                <td>
+                    <input type="submit" value="Predict Now" name="park_button">
+                </td>
+        </table>
+        <br>
+        <br>
+        <h3>Hope you like it</h3>
+</body>
+
+</html>

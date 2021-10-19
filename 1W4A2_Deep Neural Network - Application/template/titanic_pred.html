@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+
+        }
+    </style>
+</head>
+<center>
+    <a href="{{ url_for('index') }}">Go back</a>
+    <h1>Welcome to Titanic Survival Prediction</h1>
+    <p>The Machine Learning Predicts: </p>
+    <h2>{{data}}</h2>
+    <img src="../static/titanic_image.jpeg" alt="survive or not">
+    <h2>Behind the scene of the prediction:</h2>
+    <p>Number of training observations: 712</p>
+    <p>Number of testing observations: 179</p>
+    <p>Testing Set Accuracy: 0.84</p>
+    <p>Technique: Ensemble Learning of Voting Classifier (Combination of Decision Tree, Naive Bayes, Random Forest & K-Nearest Classifier)</p>
+</center>
+
+
+<body>
+    
+</body>
+
+</html>

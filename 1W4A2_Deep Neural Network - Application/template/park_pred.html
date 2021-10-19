@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            width: 200px;
+
+        }
+    </style>
+</head>
+
+<center>
+    <a href="{{ url_for('index') }}">Go back</a>
+    <h1>Welcome to Parkinson's Prediction of Total UPDRS</h1>
+    <p>Total UPDRS: Total Unified Parkinson's Disease Rating Scale</p>
+    <p>The Machine Learning Predicts Total UPDRS amounted to: </p>
+    <h2>{{data}}</h2>
+    <img src="../static/rfr.jpg" alt="RFR">
+    <h2>Behind the scene of the prediction:</h2>
+    <p>Number of Subjects participated: 42</p>
+    <p>Number of training observations: 3549</p>
+    <p>Number of testing observations: 888</p>
+    <p>Training Set and Testing Set Accuracy are: 0.90 and 0.91</p>
+    <p>Technique: Ensemble Learning of Random Forest Regressor (Combination of Decision Tree to reduce high variance)</p>
+</center>
+
+
+<body>
+    
+</body>
+
+</html>
